@@ -1,0 +1,20 @@
+Data sharing
+------------
+html       ts
+view       component
+
+2 event on ts 
+
+click on botton , change on 
+
+Data binding(to share data)
+--------------------------
+1.One way Binding
+    1.1 component to view
+        1.1.1 string interpollation {{}}
+        1.1.2 property binding     [property]="value"
+
+    1.2 view to component
+        1.2.1 event binding     (event name) = "methodname()"
+        1.2.2 $event binding    (event name) = "methodname($event)"
+        1.2.3 event binding using templete reference variable #variable_name
