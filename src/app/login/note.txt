@@ -17,4 +17,4 @@ Data binding(to share data)
     1.2 view to component
         1.2.1 event binding     (event name) = "methodname()"
         1.2.2 $event binding    (event name) = "methodname($event)"
-        1.2.3 event binding using templete reference variable #variable_name
+        1.2.3 event binding using templete reference variable. #variable_name 

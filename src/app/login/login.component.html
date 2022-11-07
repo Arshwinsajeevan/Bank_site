@@ -11,13 +11,15 @@
     <div class="col-lg-6 col-md-12 col-sm-12">
       <div class="login_form container p-1 text-center">
         <p class="name_text mt-4">Welcome to Fed Bank</p>
-        <input (change)="acnoChange($event)" id="login_number" name="log_num" type="text" placeholder="Account number" class="login_input mt-4">
+
+        <input #acno id="login_number" name="log_num" type="text" placeholder="Account number" class="login_input mt-4">
    <!-- <input id="login_number" name="log_num" type="text" [placeholder]="data" class="login_input mt-4">      property binding [property]="value  "-->
-        <input (change)="pswdChange($event)" id="login_password" name="log_pswd" type="password" placeholder="Password" class="login_input mt-4">
+        <input #pswd id="login_password" name="log_pswd" type="password" placeholder="Password" class="login_input mt-4">
 
         <!-- <div><button class="login_button mt-4" type="button" onclick=""><span class="login_span2">Log In</span></button></div> -->
         <!-- event binding (event name)="methodname()" -->
-        <div><button class="login_button mt-4" type="button" (click)="login()"><span class="login_span2">Log In</span></button></div>   
+        <div><button class="login_button mt-4" type="button" (click)="login(acno,pswd)"><span class="login_span2">Log In</span></button></div>   
+
         <p class="mt-4">Need an Account? <a class="login_span3" href="">Sign Up</a></p>
       </div>
     </div>
