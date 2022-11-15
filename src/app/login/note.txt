@@ -18,3 +18,42 @@ Data binding(to share data)
         1.2.1 event binding     (event name) = "methodname()"
         1.2.2 $event binding    (event name) = "methodname($event)"
         1.2.3 event binding using templete reference variable. #variable_name 
+
+2.Two way binding
+    2.1 ngModel                 FormsModule (a Module in ngModel)   (simplest method)
+                    [(ngModel)]="value"
+
+
+routing in angular
+------------------
+
+navigateByUrl    IS A METHOD OF CLASS ROUTER
+
+Dependency injection
+-------------------
+
+to share datas between two classes
+injection inside constructor
+
+syntax: access specifier(private or public(default-public)) variable:className
+
+Angular services
+---------------
+
+to store redendent(duplicate) data
+
+*** ng g s service_name (to create)
+
+* Direct contact with database are created on DataService , and call the logic
+
+(ngSubmit)=".....()"  (redirect to connected page when press 'Enter' , used in Form)
+
+
+------------------------------------------------------------------------------------------------------
+
+Angular Dierectives
+------------------
+-structural dierective  -can apply datas directly from array
+                        - ngFor
+
+

@@ -1,0 +1,43 @@
+
+<div><h3 class="text-danger">Welcome {{user}}</h3></div>
+<div class=" mt-5 ms-5"><a style="text-decoration: none;" class="bg-light" routerLink="/transaction">View transaction history</a></div>
+<div class="row">
+    <div class="col-lg-2 col-md-12 col-sm-12"></div>
+    <div class="col-lg-4 col-md-12 col-sm-12 mt-5">
+        <div class="card p-3 mt-5 ">
+            <div class="card-body p-5 text-center">
+               <form (ngSubmit)="deposit()" class="p-3">
+                    <h4 class="card-title text-center ">Deposit</h4>
+    
+                    <input [(ngModel)]="accno1" id="acno" name="account" type="text" placeholder="Account number" class="mt-5 form-control">
+    
+                    <input [(ngModel)]="pswd1" id="pswd" name="password" type="text" placeholder="Password" class="mt-4 form-control">
+    
+                    <input [(ngModel)]="amnt1" id="amnt" name="amount" type="text" placeholder="Amount" class="mt-4 form-control">
+    
+                    <button class="button mt-5" type="submit">Deposit</button>
+               </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4 col-md-12 col-sm-12 mt-5">
+        <div class="card p-3 mt-5">
+            <div class="card-body p-5 text-center">
+                <form (ngSubmit)="withdraw()" class="p-3">
+                    <h4 class="card-title text-center ">Withdraw</h4>
+
+                    <input [(ngModel)]="accno2" id="acno" name="account" type="text" placeholder="Account number" class="mt-5 form-control">
+
+                    <input [(ngModel)]="pswd2" id="pswd" name="password" type="text" placeholder="Password" class="mt-4 form-control">
+
+                    <input [(ngModel)]="amnt2" id="amnt" name="amount" type="text" placeholder="Amount" class="mt-4 form-control">
+
+                    <button class="button  mt-5" type="submit">Withdraw</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-lg-2 col-md-12 col-sm-12"></div>
+</div>

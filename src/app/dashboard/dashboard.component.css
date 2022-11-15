@@ -1,0 +1,16 @@
+.card{
+    background-color: rgba(255, 255, 255, 0.391)
+}
+.card-title{
+    color: rgb(14, 49, 115);;
+}
+.button{
+    background-color: rgb(44, 83, 155);
+    border: rgb(44, 83, 155) solid 1px;
+    color: white;
+    width: 45%;
+}
+.button:hover{
+    background-color: white;
+    color: rgb(44, 83, 155);
+}

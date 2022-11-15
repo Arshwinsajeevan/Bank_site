@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -13,67 +15,23 @@ export class LoginComponent implements OnInit {
   acno:any
   pswd:any
 
-  userDetails:any={
-    1000:{acno:1000,username:"Arshi",password:"1000",balance:0},
-    1001:{acno:1001,username:"Abhi",password:"1001",balance:0},
-    1002:{acno:1002,username:"Sachi",password:"1002",balance:0},
-    1003:{acno:1003,username:"Arya",password:"1003",balance:0}
-  }
-
-  constructor() { }
+  constructor(private router:Router, private ds:DataService) { }
 
   ngOnInit(): void {
   }
 
-  // login(){
-  //   alert("Login clicked")               //event binding     (event name) = "methodname()"
-  // }
+  login(){
+    var acno=this.acno      //short form
+    var pswd=this.pswd
 
-  // login(){
-  //   var acno=this.acno      //short form
-  //   var pswd=this.pswd
-
-  //   if(acno in this.userDetails){
-  //     if(pswd==this.userDetails[acno]['password']){
-  //         alert('Login success')
-  //     }
-  //     else{
-  //       alert('Incorrect password')
-  //     }
-  //   }
-  //   else{
-  //     alert('User not exist')
-  //   }
-
-  // }
-
-  login(a:any,b:any){
-    var acno=a.value     //short form
-    var pswd=b.value
-
-    if(acno in this.userDetails){
-      if(pswd==this.userDetails[acno]['password']){
-          alert('Login success')
-      }
-      else{
-        alert('Incorrect password')
-      }
+    const result=this.ds.login(acno,pswd)
+    if (result){
+      alert('Login Success')
+      this.router.navigateByUrl('dashboard')
     }
-    else{
-      alert('User not exist')
-    }
-
-  }
-
-  // acnoChange(event:any){
-  //   this.acno=event.target.value
-  //   // console.log(event.target.value)
-    
-  // }
-
-  // pswdChange(event:any){
-  //    this.pswd=event.target.value
-  //   //  console.log(event.target.value);
-  // }
+   
 
 }
+}
+
+  

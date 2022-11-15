@@ -1,0 +1,27 @@
+
+.reg{
+    background-color: rgba(255, 255, 255, 0.424);
+}
+.reg_input{
+    width: 40%;
+    margin-left: 29%;
+}
+.reg_input2{
+    width: 40%;
+    margin-left: 40%;
+}
+.reg_input3{
+    width: 40%;
+    margin-left: 36%;
+}
+.reg_button{
+    width: 20%;
+    background-color: rgb(44, 83, 155);
+    border: rgb(44, 83, 155) solid 1px;
+    color: white;
+}
+.reg_button:hover{
+    background-color: white;
+    color: rgb(44, 83, 155);
+
+}

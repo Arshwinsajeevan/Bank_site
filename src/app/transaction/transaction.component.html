@@ -1,0 +1,21 @@
+<div class="container w-50 p-5 mt-5 bg-light">
+    <h2 class="text-center">Transaction history</h2>
+    <table class="w-100 text-center mt-5">
+        <thead class="border border-danger">
+            <tr class="border border-danger">
+                <th class="border border-danger">Type</th>
+                <th class="border border-danger">Amount</th>
+            </tr>
+        </thead>
+        <tbody class="border border-danger">
+            <tr *ngFor="let i of transaction" class="border border-danger">
+                <td class="border border-danger">{{i.type}}</td>
+                <td class="border border-danger">{{i.amount}}</td>
+            </tr>
+                <!-- <tr class="border border-danger">
+                     <td class="border border-danger">Debit</td>
+                     <td class="border border-danger">200</td>
+                </tr> -->
+        </tbody>
+    </table>
+</div>

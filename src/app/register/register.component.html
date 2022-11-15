@@ -1,0 +1,27 @@
+<div class="row mt-5">
+    <div class="col-2"></div>
+    <div class="reg col-8 container mt-5 p-4">
+        <h6 class="mt-2">FedNet Online Registration</h6>
+        <div class="container border border-primary mt-4">
+            <form (ngSubmit)="register()">
+                <div class="mt-4">
+                    <label for="">Enter your Account Number:</label>
+                    <input [(ngModel)]="acno" id="reg_number" name="reg_num" type="text" placeholder=""
+                        class="reg_input ">
+                </div> <br>
+                <div>
+                    <label for="">Enter User ID:</label>
+                    <input [(ngModel)]="uname" id="reg_name" name="reg_name" type="text" placeholder=""
+                        class="reg_input2 ">
+                </div> <br>
+                <label for="">Enter the password:</label>
+                <input [(ngModel)]="psw" id="reg_password" name="reg_pswd" type="password" placeholder=""
+                    class="reg_input3 ">
+
+                <div class="p-4 text-center"><button class="reg_button mt-5" type="submit">Sign
+                        Up</button></div>
+            </form>
+        </div>
+    </div>
+    <div class="col-2"></div>
+</div>
