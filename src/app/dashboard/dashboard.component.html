@@ -1,9 +1,16 @@
 
-<div><h3 class="text-danger">Welcome {{user}}</h3></div>
+<div class="text-center"><h2 style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-weight: 500;" class="text-primary">Welcome {{user}}</h2></div>
+
 <div class=" mt-5 ms-5"><a style="text-decoration: none;" class="bg-light" routerLink="/transaction">View transaction history</a></div>
+<h4 class="ms-5 ">Date and Time :  {{dateandtime | date : 'short'}}</h4>
 <div class="row">
-    <div class="col-lg-2 col-md-12 col-sm-12"></div>
-    <div class="col-lg-4 col-md-12 col-sm-12 mt-5">
+    <div class="col-lg-2 col-md-12 col-sm-12">
+
+        <app-deleteconfirm (onCancel)="oncancel()" [item]="acno"></app-deleteconfirm>
+
+    </div>
+
+    <div [ngClass]="acno?'style':''"  class="col-lg-4 col-md-12 col-sm-12 mt-5">
         <div class="card p-3 mt-5 ">
             <div class="card-body p-5 text-center">
                <form (ngSubmit)="deposit()" class="p-3">
@@ -21,7 +28,7 @@
         </div>
     </div>
 
-    <div class="col-lg-4 col-md-12 col-sm-12 mt-5">
+    <div [ngClass]="acno?'style':''" class="col-lg-4 col-md-12 col-sm-12 mt-5">
         <div class="card p-3 mt-5">
             <div class="card-body p-5 text-center">
                 <form (ngSubmit)="withdraw()" class="p-3">
@@ -39,5 +46,9 @@
         </div>
 
     </div>
+
+        <div class="text-center mt-3"><button type="button" class="btn btn-danger btn-lg" (click)="logout() ">Logout</button> 
+            <button type="button" class="btn btn-danger btn-lg ms-3" (click)="delete() ">Delete</button></div>
+
     <div class="col-lg-2 col-md-12 col-sm-12"></div>
 </div>

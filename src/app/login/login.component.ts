@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
@@ -12,26 +13,37 @@ export class LoginComponent implements OnInit {
   // demo='Your Perfect Banking Partner'  // string interpollation  {{}}
   // data='Enter account number'          //property binding [property]="value"
 
-  acno:any
-  pswd:any
+  // acno:any
+  // pswd:any
 
-  constructor(private router:Router, private ds:DataService) { }
+  constructor(private router: Router, private ds: DataService, private formbuilder: FormBuilder) { }
+
+  // create register form model
+
+  loginForm = this.formbuilder.group({
+    acno: ['', [Validators.required, Validators.pattern('[0-9]+')]],
+    psw: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]]
+  })
 
   ngOnInit(): void {
   }
 
-  login(){
-    var acno=this.acno      //short form
-    var pswd=this.pswd
+  login() {
+    var acno = this.loginForm.value.acno    //short form
+    var psw = this.loginForm.value.psw
 
-    const result=this.ds.login(acno,pswd)
-    if (result){
-      alert('Login Success')
-      this.router.navigateByUrl('dashboard')
+    if (this.loginForm.valid) {
+      const result = this.ds.login(acno, psw)
+      if (result) {
+        alert('Login Success')
+        this.router.navigateByUrl('dashboard')
+      }
+
     }
-   
-
+    else{
+      alert('Invalid Form')
+    }
+  }
 }
-}
 
-  
+

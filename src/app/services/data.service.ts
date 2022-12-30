@@ -17,7 +17,33 @@ export class DataService {
     1003: { acno: 1003, username: "Arya", password: "1003", balance: 0 ,transaction:[] }
   }
 
-  constructor() { }
+  constructor() {
+    this.getData()
+   }
+
+  saveData(){
+    if(this.userDetails){
+      localStorage.setItem('database',JSON.stringify(this.userDetails))
+    }
+    if(this.currentuser){
+      localStorage.setItem('currentUser',JSON.stringify(this.currentuser))
+    }
+    if(this.currentacno){
+      localStorage.setItem('currentAcno',JSON.stringify(this.currentacno))
+    }
+  }
+
+  getData(){
+    if(localStorage.getItem('database')){
+      this.userDetails=JSON.parse(localStorage.getItem('database') || '')
+    }
+    if(localStorage.getItem('currentUser')){
+      this.currentuser=JSON.parse(localStorage.getItem('currentUser') || '')
+    }
+    if(localStorage.getItem('currentAcno')){
+      this.currentacno=JSON.parse(localStorage.getItem('currentAcno') || '')
+    }
+  }
 
   register(acno: any, username: any, password: any) {
 
@@ -27,6 +53,9 @@ export class DataService {
     }
     else {
       userDetails[acno] = { acno, username, password, balance: 0 ,transaction:[] }
+
+     this.saveData()
+
       return true
     }
   }
@@ -34,9 +63,6 @@ export class DataService {
   // --------------------------------------------------------------
 
   login(accno: any, psw: any) {
-
-    // var userDetails = this.userDetails.currentuser
-    // this.currentuser=userDetails[accno]['username']
 
     var userDetails=this.userDetails
 
@@ -46,6 +72,7 @@ export class DataService {
     if (accno in userDetails) {
       if (psw == userDetails[accno]['password']) {
         this.currentacno=accno
+        this.saveData()
         return true
       }
       else {
@@ -71,7 +98,7 @@ export class DataService {
 
         // add deposit details in transaction array
         userDetails[accno1]['transaction'].push({type:'CREDIT',amount})
-
+        this.saveData()
         return userDetails[accno1]['balance']
       }
       else {
@@ -95,6 +122,7 @@ export class DataService {
         if ( amount<=userDetails[accno1]['balance']) {
           userDetails[accno1]['balance'] -= amount
           userDetails[accno1]['transaction'].push({type:'DEBIT',amount})
+          this.saveData()
           return userDetails[accno1]['balance']
         }
         else{

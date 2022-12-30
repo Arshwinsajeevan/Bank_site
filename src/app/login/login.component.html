@@ -1,3 +1,4 @@
+
 <div class="text">
 
   <!-- <div><h2 class="text-primary">{{demo}}</h2></div>  //string interpollation {{}} -->
@@ -8,20 +9,29 @@
 <div class="main_login">
   <div class="row">
     <div class="col-lg-6 col-md-12 col-sm-12">
-     <form (ngSubmit)="login()">
+     <form [formGroup]=" loginForm" (ngSubmit)="login()">
         <div class="login_form container p-1 text-center">
-          <p class="name_text mt-4">Welcome to Fed Bank</p>
+          <p class="name_text mt-3">Welcome to Fed Bank</p>
+
   
-          <input [(ngModel)]="acno" id="login_number" name="log_num" type="text" placeholder="Account number"
+          <input formControlName="acno" id="login_number" name="log_num" type="text" placeholder="Account number"
             class="login_input mt-4">
+
+            <div class="text-danger" *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched">
+              <p>Invalid data</p>
+          </div>
+
           <!-- <input id="login_number" name="log_num" type="text" [placeholder]="data" class="login_input mt-4">      property binding [property]="value  "-->
-          <input [(ngModel)]="pswd" id="login_password" name="log_pswd" type="password" placeholder="Password"
+          <input formControlName="psw" id="login_password" name="log_pswd" type="password" placeholder="Password"
             class="login_input mt-4">
+
+            <div class="text-danger" *ngIf="this.loginForm.get('psw')?.errors && this.loginForm.get('acno')?.touched">
+              <p>Invalid data</p>
+          </div>
   
           <!-- <div><button class="login_button mt-4" type="button" onclick=""><span class="login_span2">Log In</span></button></div> -->
           <!-- event binding (event name)="methodname()" -->
-          <div><button class="login_button mt-4" type="submit"><span class="login_span2">Log
-                In</span></button></div>
+          <div><button class="login_button mt-4" type="submit"><span class="login_span2">Log In</span></button></div>
   
           <p class="mt-4">Need an Account? <a class="login_span3" routerLink="register" >Sign Up</a></p>
         </div>

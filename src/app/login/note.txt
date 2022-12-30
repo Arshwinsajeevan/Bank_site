@@ -53,7 +53,89 @@ to store redendent(duplicate) data
 
 Angular Dierectives
 ------------------
--structural dierective  -can apply datas directly from array
-                        - ngFor
+Used to manage DOM(Document object model) in Angular
+
+-1. Structural Dierective  - to handle structured datas in view of a component
+                             can apply datas directly from array or object in html
+
+                        - *ngFor  - to access element from array
+                        - *ngIf
+
+-2. Component Dierectives
+    - used to specify the HTML templates
+
+-3. Atribute Dierectives
+    - used to give attributs to DOM
 
 
+
+Form validation in angular
+-------------------------
+
+1.Templete Driven Form - first html form then apply validation
+
+2. Model Driven Form - a model create for form in ts then apply validation methods
+                       
+(imp)                  - ReactiveFormsModule  -module used for model form creation
+                       - FormBuilder  -class in Reactive form for model form creation
+
+                                 a model form contain
+                                            -form group
+                                            -array
+                                            -controler   (instead of ngModel formControlName is used)
+
+- can access the output of input attribute
+        this.registerForm.get('uname')?.errors   ,  this.registerForm.get('uname')?.touched
+        
+        match with rule
+        not match
+
+
+local storage in angular
+-----------------------
+
+-setItem
+-getItem
+-removeItem
+
+Parent child component communication in Angular
+---------------------------------------------
+@Input  - parent to child data sharing
+@Output  - chils to parent data sharing
+
+datas only share via selector of component
+
+-the child selector is given in parent (there will appear the content of child)
+
+User Defined Event Creation In Angular
+-------------------------------------
+- EventEmitter (from Angular core) - class used to create events
+- emit()                           - to start the event
+
+Date in Angular
+--------------
+Date -class
+
+-create an object of class Date , to access date and time
+
+Angular pipe
+-----------
+
+to transfer datas into another format
+    eg: date pipe
+
+
+--------------------
+npm i  -used to clone
+-------------------- 
+
+
+* CLIENT SERVER INTEGRATION
+-------------------------
+------------------------
+
+http request creation
+--------------------
+
+HttpClientModule  -module
+HttpClient        -class

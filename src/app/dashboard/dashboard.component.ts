@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -16,15 +17,25 @@ export class DashboardComponent implements OnInit {
   pswd2:any
   amnt2:any
 
+  acno:any
+
+  dateandtime:any
+
   user:any
 
-  constructor(private ds:DataService) {
+  constructor(private ds:DataService, private router: Router ) {
 
+    this.dateandtime=new Date()
+    // access username
     this.user=this.ds.currentuser
 
    }
 
   ngOnInit(): void {
+    if(!localStorage.getItem('currentAcno')){
+      alert('Login first')
+      this.router.navigateByUrl('')
+    }
   }
 
   deposit(){
@@ -53,5 +64,20 @@ export class DashboardComponent implements OnInit {
       alert(`${amnt2} is debited from your account and available balance is ${result}`)
     }
   }
+
+  logout(){
+    localStorage.removeItem('currentUser')
+    localStorage.removeItem('currentAcno')
+    this.router.navigateByUrl('')
+  }
+
+  delete(){
+    this.acno=JSON.parse(localStorage.getItem('currentAcno') || "")
+  }
+
+  oncancel(){
+    this.acno=""
+  }
+
 
 }
