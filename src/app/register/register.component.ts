@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
   // uname: any
   // psw: any
 
-  constructor(private ds: DataService, private login: Router, private formbuilder: FormBuilder) { }
+  constructor(private ds: DataService, private router: Router, private formbuilder: FormBuilder) { }
 
   // create register form model
 
@@ -31,22 +31,23 @@ export class RegisterComponent implements OnInit {
     var acno = this.registerForm.value.acno
     var uname = this.registerForm.value.uname
     var psw = this.registerForm.value.psw
-    const result = this.ds.register(acno, uname, psw)
+
 
     if (this.registerForm.valid) {
-      if (result) {
-        alert("Succesfully Registered")
-        this.login.navigateByUrl('')
-
+      this.ds.register(acno, uname, psw).subscribe(
+        (result: any) => {
+        alert(result.message)
+        this.router.navigateByUrl('')
+      },
+      result=>{
+        alert(result.error.message)
+        this.router.navigateByUrl('')
       }
-      else {
-        alert("User already exist")
-      }
+      )
     }
     else {
-      alert('Invalid form')
+      alert("Invalid form")
     }
-
   }
 
 }

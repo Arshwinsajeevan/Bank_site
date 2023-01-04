@@ -29,21 +29,29 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    var acno = this.loginForm.value.acno    //short form
+
+    var acno = this.loginForm.value.acno    
     var psw = this.loginForm.value.psw
 
     if (this.loginForm.valid) {
-      const result = this.ds.login(acno, psw)
-      if (result) {
-        alert('Login Success')
-        this.router.navigateByUrl('dashboard')
-      }
+      this.ds.login(acno, psw).subscribe((result:any) => {
 
+        localStorage.setItem('currentAcno', JSON.stringify(result.currentAcno))
+        localStorage.setItem('currentUser', JSON.stringify(result.currentUser))
+        localStorage.setItem('token', JSON.stringify(result.token))
+
+        alert(result.message)
+        this.router.navigateByUrl('dashboard')
+
+      },
+        result => {
+          alert(result.error.message)
+        }
+      )
     }
-    else{
+    else {
       alert('Invalid Form')
     }
   }
 }
-
 

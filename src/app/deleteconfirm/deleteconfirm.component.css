@@ -1,8 +1,8 @@
 .confirm{
     position: absolute;
     text-align: center;
-    margin-left: 37%;
+    /* padding-left: 20%;  */
     color: red;
     text-shadow: black;    
-    
-}
+}     
+

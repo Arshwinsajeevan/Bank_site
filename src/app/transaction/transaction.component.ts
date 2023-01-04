@@ -1,3 +1,4 @@
+import { ResourceLoader } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 
@@ -12,15 +13,20 @@ export class TransactionComponent implements OnInit {
   transaction:any
 
   constructor(private ds:DataService) {
-      this.useracno=this.ds.currentacno
-      this.transaction=this.ds.getTransaction(this.useracno)
-      console.log(this.transaction);
+
+      this.useracno=JSON.parse(localStorage.getItem('currentAcno') || "")
+
+      this.ds.getTransaction(this.useracno).subscribe((result:any)=>{
+        this.transaction=result.message
+      },
+      (result:any)=>{
+        alert(result.error.message)
+      })
+
       
    }
 
   ngOnInit(): void {
   }
-
-
 
 }
