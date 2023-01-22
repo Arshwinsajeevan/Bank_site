@@ -3,6 +3,7 @@
     height: 850px;
     margin-top: -15%;
     position: absolute;
+    background-image: -webkit-linear-gradient(136deg,rgb(254,225,64)0%,rgb(250,112,154)100%);;
 }
 
 .main_login {
