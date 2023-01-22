@@ -1,21 +1,32 @@
 
-.reg{
-    background-color: rgba(255, 255, 255, 0.424);
+body{
+    background-color: rgba(236, 233, 233, 0.913);
+    width: 100%;
+    height: 800px;
 }
-.reg_input{
-    width: 40%;
-    margin-left: 29%;
+.header{
+    width: 100%;
+    height: 65px;
+    background-color: rgb(44, 83, 155);
 }
-.reg_input2{
-    width: 40%;
-    margin-left: 40%;
+.header1{
+    width: 100%;
+    height: 8px;
+    background-color: goldenrod;
 }
-.reg_input3{
-    width: 40%;
-    margin-left: 36%;
+.form{
+    background-color:rgba(255, 255, 255, 0.872);
+    width: 60%;
+    height: 500%;
+    margin-left: 20%;
+    margin-top: 10%;
+}
+label{
+    font-weight: 500;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .reg_button{
-    width: 20%;
+    width: 28%;
     background-color: rgb(44, 83, 155);
     border: rgb(44, 83, 155) solid 1px;
     color: white;
@@ -23,5 +34,11 @@
 .reg_button:hover{
     background-color: white;
     color: rgb(44, 83, 155);
+
+} 
+footer{
+    height: 40px;
+    background-color: rgb(134, 164, 220);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
 }

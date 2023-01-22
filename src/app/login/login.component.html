@@ -1,41 +1,42 @@
-<div class="text">
+<img class="bg" src="../../assets/bg.jpg" alt="">
 
-  <!-- <div><h2 class="text-primary">{{demo}}</h2></div>  //string interpollation {{}} -->
-
-  <h1 class="login_text">Discover the next level <br> <span class="login_text2">in <span class="login_span1">Net
-        Banking</span></span></h1>
-</div>
 <div class="main_login">
   <div class="row">
     <div class="col-lg-6 col-md-12 col-sm-12">
-      <form [formGroup]="loginForm"(ngSubmit)="login()">
-        <div class="login_form container p-1 text-center">
+
+      <h1 class="login_text">Discover the next level </h1>
+      <h1><span class="login_text2">in
+          <span class="login_span1">Net Banking</span></span>
+      </h1>
+
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-sm-12">
+
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="login_form container p-1 text-center ms-5">
           <p class="name_text mt-3">Welcome to Fed Bank</p>
 
 
           <input formControlName="acno" id="login_number" name="log_num" type="text" placeholder="Account number"
-            class="login_input mt-4">
+            class="login_input mt-3">
 
           <div class="text-danger" *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched">
             <p>Invalid data</p>
           </div>
 
-          <!-- <input id="login_number" name="log_num" type="text" [placeholder]="data" class="login_input mt-4">      property binding [property]="value  "-->
           <input formControlName="psw" id="login_password" name="log_pswd" type="password" placeholder="Password"
-            class="login_input mt-4">
+            class="login_input mt-3">
 
-          <div class="text-danger" *ngIf="this.loginForm.get('psw')?.errors && this.loginForm.get('acno')?.touched">
+          <div class="text-danger" *ngIf="this.loginForm.get('psw')?.errors && this.loginForm.get('psw')?.touched">
             <p>Invalid data</p>
           </div>
 
-          <!-- <div><button class="login_button mt-4" type="button" onclick=""><span class="login_span2">Log In</span></button></div> -->
-          <!-- event binding (event name)="methodname()" -->
-          <div><button class="login_button mt-4" type="submit"><span class="login_span2">Log In</span></button></div>
+          <div><button class="login_button mt-5" type="submit"><span class="login_span2">Log In</span></button></div>
 
           <p class="mt-4">Need an Account? <a class="login_span3" routerLink="register">Sign Up</a></p>
         </div>
       </form>
     </div>
-    <div class="col-lg-6 col-md-12 col-sm-12"></div>
   </div>
 </div>

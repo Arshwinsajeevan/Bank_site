@@ -1,8 +1,24 @@
-.confirm{
-    position: absolute;
-    text-align: center;
-    /* padding-left: 20%;  */
-    color: red;
-    text-shadow: black;    
-}     
 
+
+.box{
+    width: 50%;
+    margin-top: 10%;
+    background-color: rgba(255, 255, 255, 0.508);
+    margin-left: 25%;
+}
+.text{
+    color: rgb(0, 0, 0);
+    text-shadow: 5px 0px 5px rgb(255, 255, 255);
+}
+.yes_button{
+    background-color: rgb(245, 36, 36);
+    border: rgb(255, 255, 255) solid 1px;
+    color: white;
+    width: 65px;
+}
+.no_button{
+    background-color: rgb(44, 83, 155);
+    border: rgb(255, 255, 255) solid 1px;
+    color: white;
+    width: 65px;
+}

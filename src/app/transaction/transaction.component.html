@@ -1,16 +1,16 @@
-<div class="container w-50 p-5 mt-5 bg-light">
-    <h2 class="text-center">Transaction history</h2>
+ <div class="main container w-50 p-5 mt-5 ">
+    <h2 class="text text-center">Transaction history</h2>
     <table class="w-100 text-center mt-5">
-        <thead class="border border-danger">
-            <tr class="border border-danger">
-                <th class="border border-danger">Type</th>
-                <th class="border border-danger">Amount</th>
+        <thead class="border border">
+            <tr class="border border">
+                <th class="border border-dark bg-light">Type</th>
+                <th class="border border-dark bg-light">Amount</th>
             </tr>
         </thead>
-        <tbody class="border border-danger">
-            <tr *ngFor="let i of transaction" class="border border-danger">
-                <td class="border border-danger">{{i.type}}</td>
-                <td class="border border-danger">{{i.amnt1}}</td>
+        <tbody class="border border">
+            <tr *ngFor="let i of transaction" class="border border">
+                <td class="border border-dark">{{i.type}}</td>
+                <td class="border border-dark">{{i.amnt1}}</td>
             </tr>
         </tbody>
     </table>

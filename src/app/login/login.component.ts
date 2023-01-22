@@ -10,12 +10,6 @@ import { DataService } from '../services/data.service';
 })
 export class LoginComponent implements OnInit {
 
-  // demo='Your Perfect Banking Partner'  // string interpollation  {{}}
-  // data='Enter account number'          //property binding [property]="value"
-
-  // acno:any
-  // pswd:any
-
   constructor(private router: Router, private ds: DataService, private formbuilder: FormBuilder) { }
 
   // create register form model

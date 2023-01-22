@@ -1,54 +1,63 @@
+<img src="../../assets/low_poly_banner_design_1711.jpg" alt="">
 
-<div class="text-center"><h2 style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-weight: 500;" class="text-primary">Welcome {{user}}</h2></div>
+<div class="main">
+   
+    <div class="details">
+        <div class=" text-center"><h2 class="username p-2">Welcome {{user}}</h2></div>
+        <div style="background-color: rgb(48, 86, 158); height: 8px; margin-top: -8px;"></div>
 
-<div class=" mt-5 ms-5"><a style="text-decoration: none;" class="bg-light" routerLink="/transaction">View transaction history</a></div>
-<h4 class="ms-5 ">Date and Time :  {{dateandtime | date : 'short'}}</h4>
-<div class="row">
-    <div class="col-lg-2 col-md-12 col-sm-12">
-
+        <div  [ngClass]="acno?'style':''" class="position-absolute top-5 end-0"><h6 style="color: rgb(44, 83, 155); font-family: 'Times New Roman', Times, serif;" class="me-3 mt-5">Login Date and Time :  {{dateandtime | date : 'short'}}</h6></div>
         <app-deleteconfirm (onDelete)="ondelete($event)" (onCancel)="oncancel()" [item]="acno"></app-deleteconfirm>
-
     </div>
 
-    <div [ngClass]="acno?'style':''"  class="col-lg-4 col-md-12 col-sm-12 mt-5">
-        <div class="card p-3 mt-5 ">
-            <div class="card-body p-5 text-center">
-               <form (ngSubmit)="deposit()" class="p-3">
-                    <h4 class="card-title text-center ">Deposit</h4>
+    <div [ngClass]="acno?'style':''" class="row">
+        <div class="col-2"></div>
+        <div class="box1 col-lg-4 md-6 sm-6 border border-light">
+            <div class="box1 p-3">
+                <form (ngSubmit)="deposit()" class="p-3">
+                    <h4 style="font-family: Georgia, 'Times New Roman', Times, serif;color:rgb(48, 86, 158);" class="card-title text-center ">Deposit</h4>
     
                     <input [(ngModel)]="accno1" id="acno" name="account" type="text" placeholder="Account number" class="mt-5 form-control">
     
-                    <input [(ngModel)]="pswd1" id="pswd" name="password" type="text" placeholder="Password" class="mt-4 form-control">
+                    <input [(ngModel)]="pswd1" id="pswd" name="password" type="password" placeholder="Password" class="mt-4 form-control">
     
                     <input [(ngModel)]="amnt1" id="amnt" name="amount" type="text" placeholder="Amount" class="mt-4 form-control">
     
-                    <button class="button mt-5" type="submit">Deposit</button>
+                   <div class="text-center"> <button class="button mt-5" type="submit">Deposit</button></div>
                </form>
             </div>
-        </div>
-    </div>
 
-    <div [ngClass]="acno?'style':''" class="col-lg-4 col-md-12 col-sm-12 mt-5">
-        <div class="card p-3 mt-5">
-            <div class="card-body p-5 text-center">
+        </div>
+        <div class="box2 col-lg-4 md-6 sm-6 ms-2 border border-light">
+            <div class="box2  p-3">
                 <form (ngSubmit)="withdraw()" class="p-3">
-                    <h4 class="card-title text-center ">Withdraw</h4>
+                    <h4 style="font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(48, 86, 158);" class="card-title text-center ">Withdraw</h4>
 
                     <input [(ngModel)]="accno2" id="acno" name="account" type="text" placeholder="Account number" class="mt-5 form-control">
 
-                    <input [(ngModel)]="pswd2" id="pswd" name="password" type="text" placeholder="Password" class="mt-4 form-control">
+                    <input [(ngModel)]="pswd2" id="pswd" name="password" type="password" placeholder="Password" class="mt-4 form-control">
 
                     <input [(ngModel)]="amnt2" id="amnt" name="amount" type="text" placeholder="Amount" class="mt-4 form-control">
 
-                    <button class="button  mt-5" type="submit">Withdraw</button>
+                   <div class="text-center"> <button class="button mt-5" type="submit">Withdraw</button></div>
                 </form>
             </div>
         </div>
+       
+        <div  [ngClass]="acno?'style':''" class="text-center mt-5"><h6 class="mt-4"><a style="text-decoration: none;" routerLink="/transaction">View Transaction History</a></h6></div>
 
     </div>
 
-        <div class="text-center mt-3"><button type="button" class="btn btn-danger btn-lg" (click)="logout() ">Logout</button> 
-            <button type="button" class="btn btn-danger btn-lg ms-3" (click)="delete() ">Delete</button></div>
+  
+    
 
-    <div class="col-lg-2 col-md-12 col-sm-12"></div>
+    <div  [ngClass]="acno?'style':''" class="text-center mt-5">
+        <button type="button" class="logout_button" (click)="logout() ">Logout</button> 
+        <button type="button" class="delete_button ms-3" (click)="delete() ">Delete</button>
+    </div>
+
 </div>
+
+   <footer  [ngClass]="acno?'style':''" class="">
+        <p class="pt-4 text-light text-center ">©Copyright The Fed Bank Limited, Regd. Office: Aluva, 2016</p>
+    </footer> 

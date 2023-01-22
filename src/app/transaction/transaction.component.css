@@ -1,0 +1,11 @@
+ .main{
+    background-color: rgba(224, 166, 21, 0.626);
+}
+.text{
+    color: black;
+    text-shadow: 5px 0px 5px white;
+    font-family: 'Josefin Sans', sans-serif;
+} 
+td{
+    background-color:rgba(86, 120, 184, 0.805);
+}

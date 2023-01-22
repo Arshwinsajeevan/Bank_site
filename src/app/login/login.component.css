@@ -1,51 +1,76 @@
+.bg {
+    width: 100%;
+    height: 850px;
+    margin-top: -15%;
+    position: absolute;
+}
 
-.text{
-    margin-top: 220px;
-    padding-left: 120px;
-    width: 50%;
-    float: left;
+.main_login {
+    position: relative;
+    margin-top: 15%;
+    align-items: center;
 }
-.main_login{
-    width: 50%;
-    float: left;
-}
-.login_text{
+
+.login_text {
     font-weight: 350;
+    margin-left: 9%;
     color: rgb(18, 57, 130);
+    text-shadow: 2px 2px 5px rgb(159, 177, 209);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-.login_text2{
-    padding-left: 26%;
+
+.login_text2 {
+    color: rgb(18, 57, 130);
+    margin-left: 31%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 350;
+    text-shadow: 2px 2px 5px rgb(159, 177, 209);
+
+
 }
-.name_text{
-    color: rgb(14, 49, 115);
-}
-.login_span1{
+
+.login_span1 {
     font-weight: 500;
     text-shadow: 2px 2px 5px rgb(159, 177, 209);
+    color: rgb(18, 57, 130);
+
 }
-.login_form{
-    margin-top: 180px;
+
+.name_text {
+    color: rgb(14, 49, 115);
+}
+
+.login_form {
     height: 350px;
-    background-color: rgba(255, 255, 255, 0.531)
+    width: 55%;
+    background-color: rgba(255, 255, 255, 0.693)
 }
-.login_input{
-    width: 75%;
+
+.login_input {
+    width: 70%;
 }
-.login_span2{
+
+.login_span2 {
     font-weight: 600;
 }
-.login_button{
-    width: 75%;
+
+.login_button {
+    width: 70%;
     background-color: rgb(44, 83, 155);
     border: rgb(44, 83, 155) solid 1px;
     color: white;
 }
-.login_button:hover{
+
+.login_button:hover {
     background-color: white;
     color: rgb(44, 83, 155);
 
 }
-.login_span3{
+
+.login_span3 {
     text-decoration: none;
 }
+.login_span3:hover{
+  text-decoration: underline;
+}
+
